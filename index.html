@@ -13,40 +13,53 @@
 </head>
 
 <body>
+	<div class="container">
+		<header class="header">
+			<img src="assets/images/logo-full.svg" alt="Conference Logo">
+			<p>Coding Conf</p>
+		</header>
+		<main class="page">
+			<div class="title">
+				<h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
+				<p>Secure your spot at next year's biggest coding conference.</p>
+			</div>
 
-	<!-- Form starts -->
+			<form class="form">
+				<fieldset>
+					<label for="myFile" id="dropArea">
+						<p>Upload your image</p>
+						<input type="file" id="myFile" name="filename" accept="image/x-png, image/jpeg"
+							style="position: absolute; opacity: 0; width: 0; height: 0;" required />
+						<div id="image-view"></div>
+					</label>
+					<p class="info">
+						<img src="/assets/images/icon-info.svg" alt="">
+						Upload your photo (JPG or PNG, max size: 500kb)
+					</p>
+				</fieldset>
+				<fieldset>
+					<label for="firstName">
+						First Name
+						<input type="text" name="firstName" id="firstName" placeholder="First Name" required>
+					</label>
 
-	Your Journey to Coding Conf 2025 Starts Here!
+					<label for="email">
+						Email Address
+						<input type="email" name="email" id="email" placeholder="example@email.com" required>
+					</label>
 
-	Secure your spot at next year's biggest coding conference.
+					<label for="github">
+						GitHub Username
+						<input type="text" name="github" id="github" placeholder="@yourusername" required>
+					</label>
+				</fieldset>
 
-	Upload Avatar
-	Drag and drop or click to upload
-	Upload your photo (JPG or PNG, max size: 500KB).
-
-	Full Name
-
-	Email Address
-	example@email.com
-
-	GitHub Username
-	@yourusername
-
-	Generate My Ticket
-
-	<!-- Form ends -->
-
-	<!-- Generated tickets starts -->
-
-	Congrats, <!-- Full Name -->! Your ticket is ready.
-
-	We've emailed your ticket to <!-- Email Address --> and will send updates in the run up to the event.
-
-	Coding Conf
-	Jan 31, 2025 / Austin, TX
-
-	<!-- Generated tickets ends -->
-
+				<button id="submitBtn" type="submit">
+					Generate My Ticket
+				</button>
+			</form>
+		</main>
+	</div>
 
 	<script src="script.js"></script>
 </body>

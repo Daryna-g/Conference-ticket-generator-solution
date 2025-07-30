@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- displays site properly based on user's device -->
+
+	<link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+	<link rel="stylesheet" href="style.css">
+
+	<title>Frontend Mentor | Conference ticket generator</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<img src="assets/images/logo-full.svg" alt="Conference Logo">
+			<p>Coding Conf</p>
+		</header>
+		<main class="page-ticket">
+			<section class="congrats">
+				<div class="congrats-message">
+					<h1>Congrats, <br>
+						<span id="name" class="name">Name</span>!
+					</h1>
+					<p>Your ticket is ready.
+					</p>
+				</div>
+
+				<p>We've emailed your ticket to <span id="email" class="email">email</span> and will send you updates about
+					the
+					event.</p>
+			</section>
+
+			<section class="card">
+				<!-- <div class="glare"></div> -->
+				<div class="wrapper-left">
+					<div class="card-top">
+						<div class="logo">
+							<img src="/assets/images/logo-mark.svg" alt="Logo">
+							<h2>Coding Conf</h2>
+						</div>
+
+						<p class="date">Jan 31, 2025 / Austin, TX</p>
+					</div>
+
+					<div class="ticket-owner">
+						<img src="" alt="" id="avatar" class="avatar">
+						<h3 class="name"><span id="firstName">First</span> <span id="lastName">Last</span></h3>
+						<p class="github">
+							<img src="/assets/images/icon-github.svg" alt="">
+							<span id="github"></span>
+						</p>
+					</div>
+				</div>
+				<div class="wrapper-right">
+					<p class="ticket-nr">
+						#01976
+					</p>
+				</div>
+			</section>
+		</main>
+		<p>Go back to the <a href="index.html">home page</a></p>
+	</div>
+
+	<script src="script-ticket.js"></script>
+</body>
+
+</html>
