@@ -28,12 +28,17 @@
 
 			<form class="form">
 				<fieldset>
-					<label for="myFile" id="dropArea">
-						<p>Upload your image</p>
+					<label for="myFile" class="upload-title">Upload Avatar</label>
+
+					<!-- Область для дропу -->
+					<div id="dropArea" class="upload-area">
+						<label for="myFile" class="upload-label">
+							<p class="text-inside-input">Drag and drop or click to upload</p>
+						</label>
 						<input type="file" id="myFile" name="filename" accept="image/x-png, image/jpeg"
 							style="position: absolute; opacity: 0; width: 0; height: 0;" required />
 						<div id="image-view"></div>
-					</label>
+					</div>
 					<p class="info">
 						<img src="/assets/images/icon-info.svg" alt="">
 						Upload your photo (JPG or PNG, max size: 500kb)
@@ -41,8 +46,8 @@
 				</fieldset>
 				<fieldset>
 					<label for="firstName">
-						First Name
-						<input type="text" name="firstName" id="firstName" placeholder="First Name" required>
+						Full Name
+						<input type="text" name="fullName" id="fullName" placeholder="Full Name" required>
 					</label>
 
 					<label for="email">
