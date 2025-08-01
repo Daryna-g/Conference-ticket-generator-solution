@@ -300,7 +300,6 @@ label {
 	padding: 1rem;
 	border-radius: 0.5rem;
 	transition: .1s ease-in-out;
-	/* font-family: Inconsolata, monospace; */
 }
 .input:hover {
 	background-color: var(--opacity-30);
@@ -314,3 +313,38 @@ label {
 	outline-offset: 2px;
 }
 
+.submit-btn {
+	background-color: var(--Orange-700);
+	color: var(--Neutral-900);
+	font-weight: 800;
+	padding: 1rem 2rem;
+	border: none;
+	cursor: pointer;
+	border-radius: 0.5rem;
+	width: 100%;
+	transition: .2s ease-in-out;
+}
+.submit-btn:hover {
+	background-color: var(--Orange-500);
+}
+form:not(:valid) button {
+	color: var(--Neutral-900);
+	background-color: var(--button-invalid);
+	cursor: not-allowed;
+}
+
+@media (min-width: 1200px) {
+	body {
+		background-image: url(/assets/images/background-desktop.png);
+	}
+}
+@media (min-width: 840px) {
+	body::before {
+		top: 3rem;
+		width: 20rem;
+		height: 20rem;
+	}
+	body::after {
+		background-image: url(/assets/images/pattern-squiggly-line-bottom-desktop.svg);
+	}
+}
