@@ -50,6 +50,8 @@ button {
 	--Orange-500: hsl(7, 88%, 67%);
 	--Orange-700: hsl(7, 71%, 60%);
 
+	--button-invalid: hsl(7, 21%, 50%);
+
 	--Gradient-text: hsl(7, 86%, 67%) to hsl(0, 0%, 100%);
 
 	/* Gradient */
@@ -81,40 +83,36 @@ body {
 	align-items: center;
 	/* text-align: center; */
 	padding: 2rem 0.625rem;
-	
-
-	@media (width >= 1200px) {
-		background-image: url(/assets/images/background-desktop.png);
-  	}
+	position: relative;
 }
 h1 {
 	font-size: 28px;
 	font-weight: 800;
 }
-
 .container {
 	max-width: 780px;
-	
+	min-height: 100vh;
+	/* position: relative; */
 }
 
-.container::before {
+body::before {
 	content: "";
 	position: absolute;
-	top: 3rem;
+	top: 1.5rem;
 	right: 0;
-	width: 20rem;
-	height: 20rem;
+	width: 120px;
+	height: 120px;
 	background-image: url(/assets/images/pattern-squiggly-line-top.svg);
 	background-size: contain;
 	background-repeat: no-repeat;
 
 }
 
-.container::after {
+body::after {
 	content: "";
 	position: absolute;
-	bottom: 0rem;
-	left: 0rem;
+	bottom: 0;
+	left: 0;
 	width: 100%;
 	height: 15rem;
 	background-image: url(/assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg);
@@ -122,10 +120,6 @@ h1 {
 	background-size: contain;
 	background-repeat: no-repeat;
 	z-index: -100;
-
-	@media (width >= 840px) {
-		background-image: url(/assets/images/pattern-squiggly-line-bottom-desktop.svg);
-	}
 }
 
 .header {
@@ -280,8 +274,43 @@ a {
 .info {
 	display: flex;
 	align-items: center;
-	gap: 5px;
+	gap: 0.5rem;
 	font-size: 12px;
 	width: 100%;
-	color: var(--opacity-70);
+	/* color: var(--opacity-70); */
+	color: var(--Neutral-300);
 }
+
+
+.info img {
+	width: 1rem;
+	height: 1rem;
+}
+
+label {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.input {
+	background-color: var(--opacity-20);
+	border: 1px solid var(--Neutral-500);
+	color: var(--Neutral-0);
+	padding: 1rem;
+	border-radius: 0.5rem;
+	transition: .1s ease-in-out;
+	/* font-family: Inconsolata, monospace; */
+}
+.input:hover {
+	background-color: var(--opacity-30);
+}
+
+.input:focus-visible {
+	background-color: var(--opacity-30);
+}
+.input:focus-visible {
+	outline: 2px solid var(--Neutral-500);
+	outline-offset: 2px;
+}
+
