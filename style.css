@@ -89,6 +89,11 @@ h1 {
 	font-size: 28px;
 	font-weight: 800;
 }
+h2 {
+	font-size: 1.15rem;
+	font-weight: 700;
+	/* font-size: calc(1rem + (1cqw * 1.15)); */
+}
 .container {
 	max-width: 750px;
 	min-height: 100vh;
@@ -368,13 +373,17 @@ form:not(:valid) button {
 
 /* Ticket page */
 .page-ticket {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 .congrats {
 	display: flex;
 	flex-direction: column;
-	gap: 1rem;
+	gap: 1.5rem;
 	text-align: center;
-	/* text-wrap: balance; */
+	text-wrap: balance;
+	margin-bottom: 3rem;
 }
 .congrats & div {
 	display: flex;
@@ -396,16 +405,17 @@ form:not(:valid) button {
 	font-size: 28px;
 	font-weight: 800;
 }
+.congrats-paragraph {
+	color: var(--Neutral-300);
+}
 
-.name {
-}
-.email {
-}
 .card {
 	display: grid;
 	grid-template-columns: 80% 20%;
 	gap: 1rem;
 	padding: 1.5rem;
+	max-width: 600px;
+	min-width: 300px;
 	width: 100%;
 	aspect-ratio: 4/1.9;
 	border-radius: 0.5rem;
@@ -417,7 +427,6 @@ form:not(:valid) button {
 	container-type: inline-size;
 	container-name: ticket;
 }
-
 
 .wrapper-left {
 	display: flex;
@@ -446,11 +455,7 @@ form:not(:valid) button {
 	width: calc(1.15rem + (2cqw * 2));
 	aspect-ratio: 1;
 }
-h2 {
-	font-size: 1.15rem;
-	font-weight: 700;
-	/* font-size: calc(1rem + (1cqw * 1.15)); */
-}
+
 .date {
 	font-size: .9rem;
 	font-size: calc(.9rem + (.5cqw));
@@ -507,3 +512,13 @@ h3.owner-name {
 	transform: translateX(-25%) translateY(-150%);
 	rotate: 90deg;
 }
+
+.go-back-link {
+	margin-block: 2rem;
+	text-align: center;
+}
+/* @media (min-width: 840px) {
+	.card {
+		max-width: 600px;
+	}
+} */
