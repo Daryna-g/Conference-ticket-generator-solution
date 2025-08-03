@@ -68,7 +68,7 @@ button {
 
 body {
 	min-height: 100vh;
-	font-size: 20px;
+	font-size: 1.25rem;
 	/* line-height: 1.5; */
 	font-family: "Inconsolata", monospace;
 	color: var(--Neutral-0);
@@ -87,18 +87,18 @@ body {
 	position: relative;
 }
 h1 {
-	font-size: 28px;
+	font-size: 1.75rem;
 	font-weight: 800;
 }
 h2 {
-	font-size: 24px;
+	font-size: 1.5rem;
 	font-weight: 700;
 	/* font-size: calc(1rem + (1cqw * 1.15)); */
 }
 .container {
-	max-width: 750px;
+	max-width: 46.875rem;
 	min-height: 100vh;
-	padding: 32px 10px;
+	padding: 2rem 0.625rem;
 }
 
 body::before {
@@ -106,8 +106,8 @@ body::before {
 	position: absolute;
 	top: 1.5rem;
 	right: 0;
-	width: 120px;
-	height: 120px;
+	width: 7.5rem;
+	height: 7.5rem;
 	background-image: url(/assets/images/pattern-squiggly-line-top.svg);
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -133,7 +133,7 @@ body::after {
 	margin-bottom: 2rem;
 }
 .logo {
-	max-width: 160px;
+	max-width: 10rem;
 }
 .lines-container {
 	position: relative;
@@ -171,7 +171,7 @@ body::after {
 
 a {
 	color: var(--Orange-500);
-	text-decoration-thickness: .75px;
+	text-decoration-thickness: 0.7504px;
 	text-underline-offset: 3px;
 }
 
@@ -205,8 +205,6 @@ a {
 	max-width: 25rem;
 	position: relative;
 	padding-bottom: 5rem;
-
-    
 }
 .form fieldset {
    display: flex;
@@ -290,7 +288,7 @@ a {
 	display: flex;
 	align-items: center;
 	gap: 0.5rem;
-	font-size: 12px;
+	font-size: 0.75rem;
 	width: 100%;
 	/* color: var(--opacity-70); */
 	color: var(--Neutral-300);
@@ -348,7 +346,7 @@ form:not(:valid) button {
 	cursor: not-allowed;
 }
 
-@media (min-width: 840px) {
+@media (min-width: 52.5rem) {
 	body::before {
 		top: 3rem;
 		width: 20rem;
@@ -358,15 +356,15 @@ form:not(:valid) button {
 		background-image: url(/assets/images/pattern-squiggly-line-bottom-desktop.svg);
 	}
 	h1 {
-		font-size: 32px;
+		font-size: 2rem;
 	}
 }
-@media (min-width: 1200px) {
+@media (min-width: 75rem) {
 	body {
 		background-image: url(/assets/images/background-desktop.png);
 	}
 	h1 {
-		font-size: 46px;
+		font-size: 2.875rem;
 	}
 }
 
@@ -403,7 +401,7 @@ form:not(:valid) button {
 .congrats-message {
 }
 .congrats-message p{
-	font-size: 28px;
+	font-size: 1.75rem;
 	font-weight: 800;
 }
 .congrats-paragraph {
@@ -415,8 +413,8 @@ form:not(:valid) button {
 	grid-template-columns: 80% 20%;
 	gap: 1rem;
 	padding: 1.25rem;
-	max-width: 600px;
-	min-width: 300px;
+	max-width: 37.5rem;
+	min-width: 18.75rem;
 	width: 100%;
 	aspect-ratio: 4/1.9;
 	border-radius: 0.5rem;
@@ -523,62 +521,63 @@ form:not(:valid) button {
 	margin-block: 2rem;
 	text-align: center;
 }
-@media (min-width: 500px) {
-h1 {
-		font-size: 42px;
+@media (min-width: 31.25rem) {
+	h1 {
+			font-size: 2.625rem;
 	}
 	h2 {
-		font-size: 32px;
+		font-size: 2rem;
 	}
+
 	.card {
 		padding: 2rem;
 	}
-	
 	.congrats-message p{
-		font-size: 36px;
+		font-size: 2.25rem;
 	}
 	.date {
-		font-size: 18px;
+		font-size: 1.125rem;
 	}
 	.owner-name {
-		font-size: 24px;
+		font-size: 1.5rem;
 	}
 	.ticket-nr {
-		font-size: 24px;
+		font-size: 1.5rem;
 	}
 }
-@media (min-width: 840px) {
+
+@media (min-width: 52.5rem) {
 	h1{
-		font-size: 62px;
+		font-size: 3.875rem;
 	}
 	.card {
 		padding: 2rem;
 	}
 	.congrats-message p{
-		font-size: 62px;
+		font-size: 3.875rem;
 	}
 	.congrats-paragraph {
-		font-size: 26px;
+		font-size: 1.625rem;
 	}
 	.congrats {
 		gap: 2.5rem;
 		margin-bottom: 6rem;
 	}
 	h2{
-		font-size: 36px;
+		font-size: 2.25rem;
 	}
 	
 	.logo-ticket {
 		gap: 1rem;
 	}
 	.date {
-		font-size: 20px;
-		margin-left: 58px;
+		font-size: 1.25rem;
+		margin-left: 3.625rem;
 	}
 	.owner-name {
-		font-size: 26px;
+		font-size: 1.625rem;
  	}
 	.ticket-nr {
-		font-size: 28px;
+		font-size: 1.75rem;
 	}
 }
