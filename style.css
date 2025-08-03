@@ -90,7 +90,7 @@ h1 {
 	font-weight: 800;
 }
 h2 {
-	font-size: 1.15rem;
+	font-size: 24px;
 	font-weight: 700;
 	/* font-size: calc(1rem + (1cqw * 1.15)); */
 }
@@ -383,7 +383,7 @@ form:not(:valid) button {
 	gap: 1.5rem;
 	text-align: center;
 	text-wrap: balance;
-	margin-bottom: 3rem;
+	margin-bottom: 4rem;
 }
 .congrats & div {
 	display: flex;
@@ -431,25 +431,28 @@ form:not(:valid) button {
 .wrapper-left {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: start;
 	gap: 1rem;
 }
+/* .wrapper-left h2 {
+	font-size: calc(1rem + (1cqw * 1.15));
+} */
+
 .card-top {
 	display: flex;
 	flex-direction: column;
-	/* gap: .5rem; */
-}
-.card-top p{
-	margin-left: calc(26px + (2cqw * 2));
-}
-.wrapper-left .logo-ticket {
 	gap: .5rem;
-	width: fit-content;
 }
+/* .card-top p{
+	margin-left: calc(26px + (2cqw * 2));
+} */
+
 .logo-ticket {
 	display: flex;
-	align-items: start;
+	align-items: center;
+	gap: .5rem;
+	width: fit-content;
 }
 .logo-ticket-img{
 	width: calc(1.15rem + (2cqw * 2));
@@ -458,8 +461,9 @@ form:not(:valid) button {
 
 .date {
 	font-size: .9rem;
-	font-size: calc(.9rem + (.5cqw));
+	/* font-size: calc(.9rem + (.5cqw)); */
 	color: var(--Neutral-300);
+	margin-left: calc(26px + (2cqw * 2));
 }
 
 .ticket-owner {
@@ -509,7 +513,7 @@ h3.owner-name {
 	position: absolute;
 	top: 50%;
 	right: 50%;
-	transform: translateX(-25%) translateY(-150%);
+	transform: translateX(-15%) translateY(-170%);
 	rotate: 90deg;
 }
 
@@ -517,8 +521,41 @@ h3.owner-name {
 	margin-block: 2rem;
 	text-align: center;
 }
-/* @media (min-width: 840px) {
-	.card {
+@media (min-width: 840px) {
+	/* .card {
 		max-width: 600px;
+	} */
+	.congrats-message h1{
+		font-size: 62px;
 	}
-} */
+	.congrats-message p{
+		font-size: 62px;
+	}
+	.congrats-paragraph {
+		font-size: 26px;
+	}
+	.congrats {
+		gap: 2.5rem;
+		margin-bottom: 6rem;
+	}
+	h2{
+		font-size: 36px;
+	}
+	.wrapper-left {
+		justify-content: space-around;
+	}
+	.logo-ticket {
+		gap: 1rem;
+	}
+	.date {
+		font-size: 20px;
+		margin-left: 58px;
+	}
+	.ticket-owner {
+		gap: 1rem;
+	}
+	.ticket-nr {
+		color: var(--Neutral-500);
+		font-size: 28px;
+	}
+}
