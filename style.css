@@ -96,7 +96,7 @@ h2 {
 	/* font-size: calc(1rem + (1cqw * 1.15)); */
 }
 .container {
-	max-width: 48.75rem;
+	max-width: 53.75rem;
 	min-height: 100vh;
 	padding: 2rem 0.625rem;
 }
@@ -130,7 +130,19 @@ body::after {
 
 .error-message {
 	color: var(--Orange-700);
+	font-size: 14px;
 	display: none;
+}
+.error-message::before {
+	content: url("/assets/images/icon-info.svg");
+	display: none;
+	color: var(--Orange-700);
+}
+.error-message.show-icon::before {
+	content: url("/assets/images/icon-info.svg");
+	color: var(--Orange-700);
+	display: block;
+	margin-right: 5px;
 }
 
 .header {
@@ -534,6 +546,9 @@ form:not(:valid) button {
 		font-size: 2rem;
 	}
 
+	.page {
+		gap: 3rem;
+	}
 	.card {
 		padding: 2rem;
 	}

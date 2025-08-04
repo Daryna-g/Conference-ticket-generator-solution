@@ -87,6 +87,7 @@ form.addEventListener("submit", (e) => {
 	function showError(warning, message) {
 		warning.textContent = message;
 		warning.style.display = "block";
+		warning.classList.add('show-icon');
 	}
 
 	function hideError(warning) {
