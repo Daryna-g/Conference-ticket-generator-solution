@@ -96,7 +96,7 @@ h2 {
 	/* font-size: calc(1rem + (1cqw * 1.15)); */
 }
 .container {
-	max-width: 46.875rem;
+	max-width: 48.75rem;
 	min-height: 100vh;
 	padding: 2rem 0.625rem;
 }
@@ -126,6 +126,12 @@ body::after {
 	background-size: contain;
 	background-repeat: no-repeat;
 	z-index: -100;
+}
+
+.error {
+	font-size: 18px;
+	color: var(--Orange-700);
+	display: none;
 }
 
 .header {

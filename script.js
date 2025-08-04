@@ -5,6 +5,10 @@ const button = document.querySelector("button")
 
 const form = document.querySelector("form");
 
+const errorImg = document.querySelector('#error-img');
+const errorEmail = document.querySelector('#error-email');
+const errorMessage = document.querySelector(".error");
+
 inputFile.addEventListener("change", uploadImage)
 
 function uploadImage() {
@@ -31,24 +35,30 @@ form.addEventListener("submit", (e) => {
 	const github = document.querySelector("#github").value
 
 	if (!fullName || !email || !file) {
+
 		alert("Please fill in all fields")
 		return
 	}
 
 	const allowedTypes = ['image/jpeg', 'image/png']
 	if (!allowedTypes.includes(file.type)) {
-		alert('Only JPG and PNG are allowed.')
+		errorImg.textContent = 'Only JPG and PNG are allowed.'
+
+		// alert('')
 		return
 	}
 
 	const maxFileSize = 500 * 1024
 	if (file.size > maxFileSize) {
-		alert('Image is too big. Max 500kb.')
+		errorImg.textContent = 'Image is too big. Max 500kb.'
+		// alert()
 		return
 	}
 
 	if (!isValidEmail(email)) {
-		alert("This is an invalid email address.");
+		errorEmail.textContent = "This is an invalid email address.";
+		errorMessage.style.display = "block";
+		// alert();
 		return
 	}
 
