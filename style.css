@@ -128,8 +128,7 @@ body::after {
 	z-index: -100;
 }
 
-.error {
-	font-size: 18px;
+.error-message {
 	color: var(--Orange-700);
 	display: none;
 }

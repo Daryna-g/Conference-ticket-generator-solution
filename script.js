@@ -5,13 +5,19 @@ const button = document.querySelector("button")
 
 const form = document.querySelector("form");
 
-const errorImg = document.querySelector('#error-img');
-const errorEmail = document.querySelector('#error-email');
-const errorMessage = document.querySelector(".error");
+// const errorImg = document.querySelector('#error-img');
+// const errorEmail = document.querySelector('#error-email');
+// const errorMessage = document.querySelector(".error");
+
+const errorImg = document.getElementById('img-error');
+const errorEmail = document.getElementById('email-error');
+const errorForm = document.getElementById('form-error');
+const errorMessage = document.getElementById('.error-message');
 
 inputFile.addEventListener("change", uploadImage)
 
 function uploadImage() {
+	errorImg.textContent = '';
 	const file = inputFile.files[0]
 	if (!file) return
 
@@ -35,31 +41,56 @@ form.addEventListener("submit", (e) => {
 	const github = document.querySelector("#github").value
 
 	if (!fullName || !email || !file) {
-
-		alert("Please fill in all fields")
+		// errorMessage.style.display = "block";
+		showError(errorForm, "Please fill in all fields");
+		// errorForm.textContent = "Please fill in all fields";
+		alert("Please fill in all fields");
 		return
+	} else {
+		hideError(errorForm);
 	}
 
 	const allowedTypes = ['image/jpeg', 'image/png']
 	if (!allowedTypes.includes(file.type)) {
-		errorImg.textContent = 'Only JPG and PNG are allowed.'
+		// errorMessage.style.display = "block";
+		// errorImg.textContent = 'Only JPG and PNG are allowed.'
+		showError(errorImg, "Only JPG and PNG are allowed");
 
 		// alert('')
 		return
+	} else {
+		hideError(errorImg);
 	}
 
 	const maxFileSize = 500 * 1024
 	if (file.size > maxFileSize) {
-		errorImg.textContent = 'Image is too big. Max 500kb.'
+		// errorMessage.style.display = "block";
+		// errorImg.textContent = 'Image is too big. Max 500kb.'
+		showError(errorImg, "Image is too big. Max 500kb.");
 		// alert()
 		return
+	} else {
+		hideError(errorImg);
 	}
 
 	if (!isValidEmail(email)) {
-		errorEmail.textContent = "This is an invalid email address.";
-		errorMessage.style.display = "block";
+		// errorEmail.textContent = "This is an invalid email address.";
+		// errorMessage.style.display = "block";
+		showError(errorEmail, "This is an invalid email address.");
 		// alert();
+		console.log('This is an invalid email address.');
 		return
+	} else {
+		hideError(errorEmail);
+	}
+
+	function showError(warning, message) {
+		warning.textContent = message;
+		warning.style.display = "block";
+	}
+
+	function hideError(warning) {
+		warning.style.display = "none";
 	}
 
 	const reader = new FileReader()
