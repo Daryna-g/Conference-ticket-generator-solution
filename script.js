@@ -5,19 +5,21 @@ const button = document.querySelector("button")
 
 const form = document.querySelector("form");
 
-const errorContainer = document.querySelector('.error');
-// const errorIcon = document.querySelector('.error-icon');
-const icon = errorContainer.querySelector('.error-icon');
 const errorImg = document.getElementById('img-error');
 const errorEmail = document.getElementById('email-error');
 const errorForm = document.getElementById('form-error');
-const errorMessage = document.querySelector('.error-message');
+
+// const errorMessage = document.querySelector('.error-message');
+
+const errorFormContainer = document.getElementById('form-error-container');
+const errorImgContainer = document.getElementById('img-error-container');
+const errorEmailContainer = document.getElementById('email-error-container');
 
 inputFile.addEventListener("change", uploadImage);
 
 function uploadImage() {
-	errorImg.textContent = '';
-	const file = inputFile.files[0]
+	// errorImg.textContent = '';
+	const file = inputFile.files[0];
 	if (!file) return
 
 	const imgLink = URL.createObjectURL(file)
@@ -30,59 +32,61 @@ function isValidEmail(email) {
 }
 
 form.addEventListener("submit", (e) => {
-	e.preventDefault()
+	e.preventDefault();
 
-	const fullName = document.querySelector("#fullName").value.trim()
-	const email = document.querySelector("#email").value.trim()
-	const file = inputFile.files[0]
-	const github = document.querySelector("#github").value
+	const fullName = document.querySelector("#fullName").value.trim();
+	const email = document.querySelector("#email").value.trim();
+	const file = inputFile.files[0];
+	const github = document.querySelector("#github").value;
 
 	if (!fullName || !email || !file) {
 		// errorMessage.style.display = "block";
-		showError(errorForm, "Please fill in all fields", errorContainer);
+		showError(errorForm, "Please fill in all fields", errorFormContainer);
 		return
 	} else {
-		hideError(errorForm, errorContainer);
+		hideError(errorForm, errorFormContainer);
 	}
 
 	const allowedTypes = ['image/jpeg', 'image/png']
 	if (!allowedTypes.includes(file.type)) {
-		showError(errorImg, "Only JPG and PNG are allowed", errorContainer);
+		showError(errorImg, "Only JPG and PNG are allowed", errorImgContainer);
 		return
 	} else {
-		hideError(errorImg, errorContainer);
+		hideError(errorImg, errorImgContainer);
 	}
 
 	const maxFileSize = 500 * 1024
 	if (file.size > maxFileSize) {
-		showError(errorImg, "Image is too big. Max 500kb.", errorContainer);
+		showError(errorImg, "Image is too big. Max 500kb.", errorImgContainer);
 		return
 	} else {
 		console.log('remove error');
-		hideError(errorImg, errorContainer);
+		hideError(errorImg, errorImgContainer);
 	}
 
 	if (!isValidEmail(email)) {
 
-		showError(errorEmail, "This is an invalid email address.", errorContainer);
+		showError(errorEmail, "This is an invalid email address.", errorEmailContainer);
 		console.log('This is an invalid email address.');
 		return
 	} else {
-		hideError(errorEmail, errorContainer);
+		hideError(errorEmail, errorEmailContainer);
 	}
 
 
 	function showError(warning, message, container) {
+		document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
 		console.log(container);
 
 		warning.textContent = message;
 		container.classList.add('show-error');
+		container.classList.remove('hide-error');
 	}
 
 	function hideError(warning, container) {
-
-		container.classList.remove('show-error');
 		warning.textContent = '';
+		container.classList.remove('show-error');
+		container.classList.add('hide-error');
 	}
 
 	const reader = new FileReader()

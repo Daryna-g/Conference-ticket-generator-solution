@@ -127,30 +127,38 @@ body::after {
 	background-repeat: no-repeat;
 	z-index: -100;
 }
-.error {
-	display: none;
-}
 
-.error-message {
-	color: var(--Orange-700);
-	font-size: 14px;
+/* .error {
+	display: none; 
+} */
+
+
+/* .error-message {
+	
 	display: none;
 }
 .error-icon {
-	color: var(--Orange-700);
-	margin-right: 5px;
+	
 	display: none;
-}
+} */
 
 .show-error {
 	display: flex;
 }
 .show-error .error-message {
 	display: block;
+	color: var(--Orange-700);
+	font-size: 14px;
 }
 .show-error .error-icon {
 	display: block;
+	color: var(--Orange-700);
+	margin-right: 5px;
 }
+.hide-error {
+	display: none;
+}
+
 /* .error-message::before {
 	content: url("/assets/images/icon-info.svg");
 	display: none;
