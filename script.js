@@ -5,16 +5,15 @@ const button = document.querySelector("button")
 
 const form = document.querySelector("form");
 
-// const errorImg = document.querySelector('#error-img');
-// const errorEmail = document.querySelector('#error-email');
-// const errorMessage = document.querySelector(".error");
-
+const errorContainer = document.querySelector('.error');
+// const errorIcon = document.querySelector('.error-icon');
+const icon = errorContainer.querySelector('.error-icon');
 const errorImg = document.getElementById('img-error');
 const errorEmail = document.getElementById('email-error');
 const errorForm = document.getElementById('form-error');
-const errorMessage = document.getElementById('.error-message');
+const errorMessage = document.querySelector('.error-message');
 
-inputFile.addEventListener("change", uploadImage)
+inputFile.addEventListener("change", uploadImage);
 
 function uploadImage() {
 	errorImg.textContent = '';
@@ -33,8 +32,6 @@ function isValidEmail(email) {
 form.addEventListener("submit", (e) => {
 	e.preventDefault()
 
-	// const firstName = document.querySelector("#firstName").value.trim()
-	// const lastName = document.querySelector("#lastName").value.trim()
 	const fullName = document.querySelector("#fullName").value.trim()
 	const email = document.querySelector("#email").value.trim()
 	const file = inputFile.files[0]
@@ -42,56 +39,50 @@ form.addEventListener("submit", (e) => {
 
 	if (!fullName || !email || !file) {
 		// errorMessage.style.display = "block";
-		showError(errorForm, "Please fill in all fields");
-		// errorForm.textContent = "Please fill in all fields";
-		alert("Please fill in all fields");
+		showError(errorForm, "Please fill in all fields", errorContainer);
 		return
 	} else {
-		hideError(errorForm);
+		hideError(errorForm, errorContainer);
 	}
 
 	const allowedTypes = ['image/jpeg', 'image/png']
 	if (!allowedTypes.includes(file.type)) {
-		// errorMessage.style.display = "block";
-		// errorImg.textContent = 'Only JPG and PNG are allowed.'
-		showError(errorImg, "Only JPG and PNG are allowed");
-
-		// alert('')
+		showError(errorImg, "Only JPG and PNG are allowed", errorContainer);
 		return
 	} else {
-		hideError(errorImg);
+		hideError(errorImg, errorContainer);
 	}
 
 	const maxFileSize = 500 * 1024
 	if (file.size > maxFileSize) {
-		// errorMessage.style.display = "block";
-		// errorImg.textContent = 'Image is too big. Max 500kb.'
-		showError(errorImg, "Image is too big. Max 500kb.");
-		// alert()
+		showError(errorImg, "Image is too big. Max 500kb.", errorContainer);
 		return
 	} else {
-		hideError(errorImg);
+		console.log('remove error');
+		hideError(errorImg, errorContainer);
 	}
 
 	if (!isValidEmail(email)) {
-		// errorEmail.textContent = "This is an invalid email address.";
-		// errorMessage.style.display = "block";
-		showError(errorEmail, "This is an invalid email address.");
-		// alert();
+
+		showError(errorEmail, "This is an invalid email address.", errorContainer);
 		console.log('This is an invalid email address.');
 		return
 	} else {
-		hideError(errorEmail);
+		hideError(errorEmail, errorContainer);
 	}
 
-	function showError(warning, message) {
+
+	function showError(warning, message, container) {
+		console.log(container);
+
 		warning.textContent = message;
-		warning.style.display = "block";
-		warning.classList.add('show-icon');
+		container.classList.add('show-error');
 	}
 
-	function hideError(warning) {
-		warning.style.display = "none";
+	function hideError(warning, container) {
+
+		container.classList.remove('show-error');
+		warning.textContent = '';
 	}
 
 	const reader = new FileReader()
@@ -110,5 +101,16 @@ form.addEventListener("submit", (e) => {
 	}
 
 	reader.readAsDataURL(file)
-
 });
+
+// warning.style.display = "block";
+	// const icon = errorContainer.querySelector('.error-icon');
+	// container.style.display = "flex";
+	// icon.style.display = "inline-block";
+	// warning.classList.add('show-icon');
+
+	// const icon = errorContainer.querySelector('.error-icon');
+	// warning.style.display = "none";
+
+	// container.style.display = "none";
+	// icon.style.display = "none";

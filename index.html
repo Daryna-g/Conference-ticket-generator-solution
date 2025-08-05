@@ -40,7 +40,18 @@
 								<div id="image-view"></div>
 							</label>
 						</div>
-						<span class="error-message" id="img-error"></span>
+						<div class="error">
+							<svg class="error-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"
+								viewBox="0 0 16 16">
+								<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+									d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z" />
+								<path fill="currentColor" d="M8.004 10.462V7.596Z" />
+								<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+									d="M8.004 10.462V7.596M8 5.569v-.042" />
+							</svg>
+							<span class="error-message" id="img-error"></span>
+						</div>
+
 						<p class="info">
 							<img src="/assets/images/icon-info.svg" alt="">
 							Upload your photo (JPG or PNG, max size: 500kb)
@@ -56,14 +67,34 @@
 							Email Address
 							<input type="email" name="email" id="email" class="input" placeholder="example@email.com" required>
 						</label>
-						<span class="error-message" id="email-error"></span>
+						<div class="error">
+							<svg class="error-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"
+								viewBox="0 0 16 16">
+								<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+									d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z" />
+								<path fill="currentColor" d="M8.004 10.462V7.596Z" />
+								<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+									d="M8.004 10.462V7.596M8 5.569v-.042" />
+							</svg>
+							<span class="error-message" id="email-error"></span>
+						</div>
 
 						<label for="github">
 							GitHub Username
 							<input type="text" name="github" id="github" class="input" placeholder="@yourusername" required>
 						</label>
 					</fieldset>
-					<span class="error-message" id="form-error"></span>
+					<div class="error">
+						<svg class="error-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"
+							viewBox="0 0 16 16">
+							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+								d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z" />
+							<path fill="currentColor" d="M8.004 10.462V7.596Z" />
+							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+								d="M8.004 10.462V7.596M8 5.569v-.042" />
+						</svg>
+						<span class="error-message" id="form-error"></span>
+					</div>
 
 					<button id="submitBtn" type="submit" class="submit-btn">
 						Generate My Ticket
@@ -72,7 +103,6 @@
 			</main>
 		</div>
 	</div>
-
 
 	<script src="script.js"></script>
 </body>

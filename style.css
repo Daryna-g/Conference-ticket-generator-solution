@@ -127,23 +127,41 @@ body::after {
 	background-repeat: no-repeat;
 	z-index: -100;
 }
+.error {
+	display: none;
+}
 
 .error-message {
 	color: var(--Orange-700);
 	font-size: 14px;
 	display: none;
 }
-.error-message::before {
+.error-icon {
+	color: var(--Orange-700);
+	margin-right: 5px;
+	display: none;
+}
+
+.show-error {
+	display: flex;
+}
+.show-error .error-message {
+	display: block;
+}
+.show-error .error-icon {
+	display: block;
+}
+/* .error-message::before {
 	content: url("/assets/images/icon-info.svg");
 	display: none;
-	color: var(--Orange-700);
+	
 }
 .error-message.show-icon::before {
 	content: url("/assets/images/icon-info.svg");
 	color: var(--Orange-700);
 	display: block;
 	margin-right: 5px;
-}
+} */
 
 .header {
 	text-align: center;
