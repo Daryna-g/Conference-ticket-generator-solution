@@ -114,6 +114,7 @@ body::before {
 
 }
 
+
 body::after {
 	content: "";
 	position: absolute;
@@ -176,7 +177,9 @@ body::after {
 	margin-bottom: 2rem;
 }
 .logo {
-	max-width: 10rem;
+	/* width: 70%; */
+	width: 150px;
+	/* max-width: 200px; */
 }
 .lines-container {
 	position: relative;
@@ -193,6 +196,7 @@ body::after {
 	background-size: cover;
 	background-repeat: no-repeat;
 }
+
 .page {
 	position: relative;
 	display: flex;
@@ -571,7 +575,11 @@ form:not(:valid) button {
 	h2 {
 		font-size: 2rem;
 	}
-
+	.logo {
+		/* width: 70%; */
+		width: 100%;
+		max-width: 200px;
+	}
 	.page {
 		gap: 3rem;
 	}
@@ -590,6 +598,7 @@ form:not(:valid) button {
 	.ticket-nr {
 		font-size: 1.5rem;
 	}
+	
 }
 
 @media (min-width: 52.5rem) {
@@ -598,6 +607,9 @@ form:not(:valid) button {
 	}
 	.card {
 		padding: 2rem;
+	}
+	.header {
+		margin-bottom: 4rem;
 	}
 	.congrats-message p{
 		font-size: 3.875rem;
@@ -625,5 +637,16 @@ form:not(:valid) button {
  	}
 	.ticket-nr {
 		font-size: 1.75rem;
+	}
+	.lines-container::before {
+		content: "";
+		position: absolute;
+		top: -140px;
+		left: 80px;
+		width: 337px;
+		height: 337px;
+		background-image: url(/assets/images/pattern-circle.svg);
+		background-size: contain;
+		background-repeat: no-repeat;
 	}
 }
