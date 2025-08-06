@@ -9,8 +9,6 @@ const errorImg = document.getElementById('img-error');
 const errorEmail = document.getElementById('email-error');
 const errorForm = document.getElementById('form-error');
 
-// const errorMessage = document.querySelector('.error-message');
-
 const errorFormContainer = document.getElementById('form-error-container');
 const errorImgContainer = document.getElementById('img-error-container');
 const errorEmailContainer = document.getElementById('email-error-container');
@@ -18,7 +16,6 @@ const errorEmailContainer = document.getElementById('email-error-container');
 inputFile.addEventListener("change", uploadImage);
 
 function uploadImage() {
-	// errorImg.textContent = '';
 	const file = inputFile.files[0];
 	if (!file) return
 
@@ -40,7 +37,6 @@ form.addEventListener("submit", (e) => {
 	const github = document.querySelector("#github").value;
 
 	if (!fullName || !email || !file) {
-		// errorMessage.style.display = "block";
 		showError(errorForm, "Please fill in all fields", errorFormContainer);
 		return
 	} else {
@@ -65,18 +61,14 @@ form.addEventListener("submit", (e) => {
 	}
 
 	if (!isValidEmail(email)) {
-
 		showError(errorEmail, "This is an invalid email address.", errorEmailContainer);
-		console.log('This is an invalid email address.');
 		return
 	} else {
 		hideError(errorEmail, errorEmailContainer);
 	}
 
-
 	function showError(warning, message, container) {
 		document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
-		console.log(container);
 
 		warning.textContent = message;
 		container.classList.add('show-error');
@@ -93,28 +85,16 @@ form.addEventListener("submit", (e) => {
 	reader.onload = function (event) {
 		const base64Image = event.target.result
 
-		// Opslaan in sessionStorage
-		// sessionStorage.setItem("userFirstName", firstName)
+		// Save in sessionStorage
 		sessionStorage.setItem("userFullName", fullName)
 		sessionStorage.setItem("userEmail", email)
 		sessionStorage.setItem("userGithub", github)
 		sessionStorage.setItem("userImage", base64Image)
 
-		// Doorsturen
+		// Forward
 		window.location.href = 'ticket.html'
 	}
 
 	reader.readAsDataURL(file)
 });
 
-// warning.style.display = "block";
-	// const icon = errorContainer.querySelector('.error-icon');
-	// container.style.display = "flex";
-	// icon.style.display = "inline-block";
-	// warning.classList.add('show-icon');
-
-	// const icon = errorContainer.querySelector('.error-icon');
-	// warning.style.display = "none";
-
-	// container.style.display = "none";
-	// icon.style.display = "none";

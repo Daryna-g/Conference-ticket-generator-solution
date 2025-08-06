@@ -504,7 +504,7 @@ form:not(:valid) button {
 	.page {
 		gap: 3rem;
 	}
-	
+
 	/* ticket page */
 	.card {
 		padding: 2rem;
@@ -586,8 +586,5 @@ form:not(:valid) button {
 @media (min-width: 75rem) {
 	body {
 		background-image: url(/assets/images/background-desktop.png);
-	}
-	h1 {
-		font-size: 2.875rem;
 	}
 }
