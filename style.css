@@ -69,7 +69,6 @@ button {
 body {
 	min-height: 100vh;
 	font-size: 1.25rem;
-	/* line-height: 1.5; */
 	font-family: "Inconsolata", monospace;
 	color: var(--Neutral-0);
    background-image: url(/assets/images/background-mobile.png);
@@ -82,7 +81,6 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	/* text-align: center; */
 	
 	position: relative;
 }
@@ -93,8 +91,8 @@ h1 {
 h2 {
 	font-size: 1.5rem;
 	font-weight: 700;
-	/* font-size: calc(1rem + (1cqw * 1.15)); */
 }
+
 .container {
 	max-width: 53.75rem;
 	min-height: 100vh;
@@ -111,9 +109,7 @@ body::before {
 	background-image: url(/assets/images/pattern-squiggly-line-top.svg);
 	background-size: contain;
 	background-repeat: no-repeat;
-
 }
-
 
 body::after {
 	content: "";
@@ -128,20 +124,6 @@ body::after {
 	background-repeat: no-repeat;
 	z-index: -100;
 }
-
-/* .error {
-	display: none; 
-} */
-
-
-/* .error-message {
-	
-	display: none;
-}
-.error-icon {
-	
-	display: none;
-} */
 
 .show-error {
 	display: flex;
@@ -160,33 +142,18 @@ body::after {
 	display: none;
 }
 
-/* .error-message::before {
-	content: url("/assets/images/icon-info.svg");
-	display: none;
-	
-}
-.error-message.show-icon::before {
-	content: url("/assets/images/icon-info.svg");
-	color: var(--Orange-700);
-	display: block;
-	margin-right: 5px;
-} */
-
 .header {
 	text-align: center;
 	margin-bottom: 2rem;
 }
 .logo {
-	/* width: 70%; */
 	width: 150px;
-	/* max-width: 200px; */
 }
 .lines-container {
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	/* padding: 1rem; */
 	gap: 2rem;
 	min-height: 100vh;
 	width: 100%;
@@ -202,7 +169,6 @@ body::after {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	/* padding: 1rem; */
 	gap: 2rem;
 	min-height: 100vh;
 	width: 100%;
@@ -231,13 +197,7 @@ a {
 	gap: 2rem;
 	overflow: visible;
 	position: relative;
-
-	
 }
-/* .top h1 , p{
-	text-wrap: balance;
-} */
-
 .top .title {
 	display: flex;
 	flex-direction: column;
@@ -337,11 +297,8 @@ a {
 	gap: 0.5rem;
 	font-size: 0.75rem;
 	width: 100%;
-	/* color: var(--opacity-70); */
 	color: var(--Neutral-300);
 }
-
-
 .info img {
 	width: 1rem;
 	height: 1rem;
@@ -393,30 +350,6 @@ form:not(:valid) button {
 	cursor: not-allowed;
 }
 
-@media (min-width: 52.5rem) {
-	body::before {
-		top: 3rem;
-		width: 20rem;
-		height: 20rem;
-	}
-	body::after {
-		background-image: url(/assets/images/pattern-squiggly-line-bottom-desktop.svg);
-	}
-	h1 {
-		font-size: 2rem;
-	}
-}
-@media (min-width: 75rem) {
-	body {
-		background-image: url(/assets/images/background-desktop.png);
-	}
-	h1 {
-		font-size: 2.875rem;
-	}
-}
-
-
-
 /* Ticket page */
 .page-ticket {
 	display: flex;
@@ -431,11 +364,7 @@ form:not(:valid) button {
 	text-wrap: balance;
 	margin-bottom: 4rem;
 }
-.congrats & div {
-	display: flex;
-	flex-direction: column;
-	gap: 0.5rem;
-}
+
 .name {
 	background: -webkit-linear-gradient(0deg,var(--gradient-text-start), var(--gradient-text-end), var(--gradient-text-start), var(--gradient-text-end));
 	-webkit-background-clip: text;
@@ -471,7 +400,6 @@ form:not(:valid) button {
 	background-repeat: no-repeat;
 	background-position: center;
 	container-type: inline-size;
-	container-name: ticket;
 }
 
 .wrapper-left {
@@ -481,18 +409,12 @@ form:not(:valid) button {
 	align-items: start;
 	gap: 1rem;
 }
-/* .wrapper-left h2 {
-	font-size: calc(1rem + (1cqw * 1.15));
-} */
 
 .card-top {
 	display: flex;
 	flex-direction: column;
 	gap: .5rem;
 }
-/* .card-top p{
-	margin-left: calc(26px + (2cqw * 2));
-} */
 
 .logo-ticket {
 	display: flex;
@@ -507,7 +429,6 @@ form:not(:valid) button {
 
 .date {
 	font-size: .9rem;
-	/* font-size: calc(.9rem + (.5cqw)); */
 	color: var(--Neutral-300);
 	margin-left: calc(32px + (2cqw * 2));
 }
@@ -530,7 +451,7 @@ form:not(:valid) button {
 }
 .owner-name {
 	grid-area: name;
-	font-size: 18px;        
+	font-size: 1.125rem;        
 	align-self: flex-end;
 	font-weight: 500;
 }
@@ -553,7 +474,6 @@ form:not(:valid) button {
 	position: relative;
 	min-width: 2rem;
 }
-
 .ticket-nr {
 	color: var(--Neutral-500);
 	font-size: 1.15rem;
@@ -568,6 +488,7 @@ form:not(:valid) button {
 	margin-block: 2rem;
 	text-align: center;
 }
+
 @media (min-width: 31.25rem) {
 	h1 {
 			font-size: 2.625rem;
@@ -575,14 +496,16 @@ form:not(:valid) button {
 	h2 {
 		font-size: 2rem;
 	}
+
 	.logo {
-		/* width: 70%; */
 		width: 100%;
-		max-width: 200px;
+		max-width: 12.5rem;
 	}
 	.page {
 		gap: 3rem;
 	}
+	
+	/* ticket page */
 	.card {
 		padding: 2rem;
 	}
@@ -598,19 +521,32 @@ form:not(:valid) button {
 	.ticket-nr {
 		font-size: 1.5rem;
 	}
-	
 }
 
 @media (min-width: 52.5rem) {
-	h1{
-		font-size: 3.875rem;
+	body::before {
+		top: 3rem;
+		width: 20rem;
+		height: 20rem;
 	}
+	body::after {
+		background-image: url(/assets/images/pattern-squiggly-line-bottom-desktop.svg);
+	}
+	h1{
+		font-size: 62px;
+	}
+	h2{
+		font-size: 2.25rem;
+	}
+
 	.card {
 		padding: 2rem;
 	}
 	.header {
 		margin-bottom: 4rem;
 	}
+
+	/* ticket page */
 	.congrats-message p{
 		font-size: 3.875rem;
 	}
@@ -621,10 +557,6 @@ form:not(:valid) button {
 		gap: 2.5rem;
 		margin-bottom: 6rem;
 	}
-	h2{
-		font-size: 2.25rem;
-	}
-	
 	.logo-ticket {
 		gap: 1rem;
 	}
@@ -641,12 +573,21 @@ form:not(:valid) button {
 	.lines-container::before {
 		content: "";
 		position: absolute;
-		top: -140px;
-		left: 80px;
-		width: 337px;
-		height: 337px;
+		top: -8.75rem;
+		left: 5rem;
+		width: 21.0625rem;
+		height: 21.0625rem;
 		background-image: url(/assets/images/pattern-circle.svg);
 		background-size: contain;
 		background-repeat: no-repeat;
+	}
+}
+
+@media (min-width: 75rem) {
+	body {
+		background-image: url(/assets/images/background-desktop.png);
+	}
+	h1 {
+		font-size: 2.875rem;
 	}
 }
