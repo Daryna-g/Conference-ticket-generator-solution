@@ -37,8 +37,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/tip-calculator-app-OFETalqHG1)
-- Live Site URL: [Add live site URL here](https://daryna-g.github.io/Tip-calculator-app/)
+- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/conference-ticket-generator-solution-FqX69bH2r9)
+- Live Site URL: [Add live site URL here](https://daryna-g.github.io/Conference-ticket-generator-solution/)
 
 ## My process
 
